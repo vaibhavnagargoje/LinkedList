@@ -52,8 +52,14 @@ class LinkedList:
     
     # insert at the last 
     def insert_last(self,value):
-        current=self.head
+        #if list are empty 
         new_node= Node(value)
+        if(self.head==None):
+            self.head=new_node
+            self.n+=1
+            return
+
+        current=self.head
         while current:
             if(current.next==None):
                 current.next=new_node
@@ -74,3 +80,4 @@ print(len(L))
 L.print_Node()
 L.insert_last('Sanket')
 L.print_Node()
+print(len(L))
